@@ -4,6 +4,7 @@ This is NTE System Project
 ```bash
 git clone https://github.com/m4ri01/NTE-Project.git
 cd NTE-Project/
+mkdir db_data
 docker-compose up -d
 docker-exec -ti backEndService /bin/bash
 ```  
@@ -13,4 +14,4 @@ flask db migrate
 flask db upgrade
 ```  
 
-After exit using CTRL+C
+After that exit using CTRL+C
