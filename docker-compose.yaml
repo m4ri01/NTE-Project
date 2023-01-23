@@ -1,7 +1,8 @@
 version: '3'
 services:
   db:
-    image: mariadb:10.3
+    image: mariadb:10.2
+    container_name: dbService
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: P@ssw0rd
@@ -9,7 +10,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: P@ssw0rd
     volumes:
-      - .:/var/lib/mysql
+      - ./db_data:/var/lib/mysql
     ports:
       - 3306:3306
   be:
@@ -19,4 +20,6 @@ services:
       - 5000:5000
     restart: always
     depends_on:
+      - db
+    links:
       - db
