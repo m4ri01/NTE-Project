@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    image: mariadb:10.2
+    image: mariadb:10.3
     container_name: dbService
     restart: always
     environment:
@@ -9,8 +9,9 @@ services:
       MYSQL_DATABASE: telkom
       MYSQL_USER: user
       MYSQL_PASSWORD: P@ssw0rd
+      MYSQL_ROOT_HOST: "%"
     volumes:
-      - ./db_data:/var/lib/mysql
+      - db_data:/var/lib/mysql
     ports:
       - 3306:3306
   be:
@@ -23,3 +24,5 @@ services:
       - db
     links:
       - db
+volumes:
+  db_data:
