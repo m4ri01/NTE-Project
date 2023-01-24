@@ -6,7 +6,9 @@ import Controllers
 from Routers.RouterONT import ONTBP
 app = Flask(__name__)
 app.config.from_object('config')
-CORS(app)
+CORS(app,
+  resources={r'/*': origins: '*'}
+)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 db.init_app(app)
