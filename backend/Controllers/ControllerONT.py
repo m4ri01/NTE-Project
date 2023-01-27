@@ -32,7 +32,7 @@ def store():
     return jsonify({'success': 'ONT stored'}), 200
 
 def read():
-    data = request.get_json()
+    data = request.args
     name = data["name"]
     dataType = data["dataType"]
     if name is None or dataType is None:
