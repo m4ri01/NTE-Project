@@ -24,5 +24,12 @@ services:
       - db
     links:
       - db
+  fe:
+    container_name: frontEndService
+    build: ./frontend
+    ports:
+      - '80:80'
+    depends_on:
+      - be
 volumes:
   db_data:
