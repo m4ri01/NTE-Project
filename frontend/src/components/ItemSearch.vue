@@ -45,8 +45,9 @@ export default {
         <div class="row result">
           <div class="col-5 text-right">Nama</div>
           <div class="col-1">:</div>
-          <div class="col-6">lorem ipsum</div>
+          <div class="col-6">{{ item.name }}</div>
         </div>
+        
         <div class="row result">
           <div class="col-5">ND Internet</div>
           <div class="col-1">:</div>

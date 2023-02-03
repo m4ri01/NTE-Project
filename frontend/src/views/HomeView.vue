@@ -14,6 +14,7 @@ export default {
         query: "",
       },
       items: {
+        name: "",
         NDInternet: "",
         SNONT: "",
         alamat: "",
@@ -108,7 +109,7 @@ export default {
     </div>
     <div class="container-fluid bg-primary mb-3">
       <!-- <div v-for="item in items" v-bind:key="item.id"> -->
-      <ItemSearch v-if="items.NDInternet" :item="items" />
+      <ItemSearch v-if="items.name" :item="items" />
       <div v-else>
         <h2></h2>
       </div>

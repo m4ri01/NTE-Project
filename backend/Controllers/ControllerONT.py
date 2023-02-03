@@ -4,6 +4,7 @@ from Utils.Distance import Distance
 from Utils.Serializer import Obj2Json
 def store():
     data = request.get_json()
+    Name = data['name']
     NDInternet = data['NDInternet']
     SNONT = data['SNONT']
     alamat = data["alamat"]
@@ -18,9 +19,10 @@ def store():
     if distance >= 250:
         return jsonify({'error': 'ONT is not in range'}), 400
     if db.session.query(Internet).filter_by(NDInternet=NDInternet).first() is None:
-        db.session.add(Internet(NDInternet=NDInternet, SNONT=SNONT, alamat=alamat, longitude=longitude, latitude=latitude, ODPId=ODPCheck.id, firstONT=SNONT))
+        db.session.add(Internet(Name=Name, NDInternet=NDInternet, SNONT=SNONT, alamat=alamat, longitude=longitude, latitude=latitude, ODPId=ODPCheck.id, firstONT=SNONT))
     else:
         data = db.session.query(Internet).filter_by(NDInternet=NDInternet).first()
+        data.Name = Name
         data.NDInternet = NDInternet
         data.SNONT = SNONT
         data.alamat = alamat

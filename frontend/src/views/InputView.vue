@@ -5,6 +5,7 @@ export default {
   data() {
     return {
       form: {
+        name: "",
         nd_inet: "",
         sn_ont: "",
         alamat: "",
@@ -22,6 +23,7 @@ export default {
         url: "http://localhost:5000/ont/",
         headers: {},
         data: {
+          name: this.form.name,
           NDInternet: this.form.nd_inet,
           SNONT: this.form.sn_ont,
           alamat: this.form.alamat,
@@ -56,6 +58,20 @@ export default {
         <h3 class="text-center">
           <strong>Input NTE</strong>
         </h3>
+      </div>
+      <div class="row g-3 align-items-center mt-2">
+        <div class="col-2"></div>
+        <div class="col-1">
+          <label for="name" class="col-form-label">Name</label>
+        </div>
+        <div class="col-6">
+          <input
+            v-model="form.name"
+            type="text"
+            id="name"
+            class="form-control"
+          />
+        </div>
       </div>
       <div class="row g-3 align-items-center mt-2">
         <div class="col-2"></div>

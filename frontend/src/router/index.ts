@@ -15,10 +15,15 @@ const router = createRouter({
       component: () => import("../views/InputView.vue"),
     },
     {
-      path: "/search",
-      name: "search",
-      component: () => import("../views/SearchView.vue"),
-    },
+      path: "/odp",
+      name: "odp",
+      component: () => import("../views/ODPView.vue"),
+    }
+    // {
+    //   path: "/search",
+    //   name: "search",
+    //   component: () => import("../views/SearchView.vue"),
+    // },
   ],
 });
 

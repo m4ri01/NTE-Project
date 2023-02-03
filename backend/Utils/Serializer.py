@@ -1,6 +1,7 @@
 def Obj2Json(obj):
     return {
         'id': obj.Internet.id,
+        'name': obj.Internet.Name,
         'NDInternet': obj.Internet.NDInternet,
         'SNONT': obj.Internet.SNONT,
         'alamat': obj.Internet.alamat,

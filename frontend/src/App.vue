@@ -21,6 +21,7 @@ import { RouterLink, RouterView } from "vue-router";
         <ul class="d-flex align-items-center m-0">
           <RouterLink class="nav-link" to="/">Home</RouterLink>
           <RouterLink class="nav-link" to="/input">Input NTE</RouterLink>
+          <RouterLink class="nav-link" to="/odp">Input ODP</RouterLink>
         </ul>
       </nav>
       <footer class="mt-5">

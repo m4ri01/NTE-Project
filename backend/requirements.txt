@@ -3,3 +3,5 @@ mysqlclient
 flask-sqlalchemy==3.0.2
 flask-migrate
 flask-cors
+pandas
+openpyxl
