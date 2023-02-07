@@ -11,9 +11,9 @@ import { RouterLink, RouterView } from "vue-router";
             <img
               alt="Vue logo"
               class="logo"
-              src="@/assets/logo.svg"
-              width="30"
-              height="30"
+              src="@/assets/logo.png"
+              width="50"
+              height="50"
             />
             <span>NTE MANAGEMENT DASHBOARD</span>
           </div>

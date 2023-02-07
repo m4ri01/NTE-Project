@@ -31,6 +31,7 @@ class Internet(db.Model):
     ODPId  = db.Column(db.Integer, db.ForeignKey('odp.id',ondelete='CASCADE'))
     firstONT = db.Column(db.String(255))
     lastONT = db.Column(db.String(255))
+    statusONT = db.Column(db.Integer)
     
     def serialize(self):
         return {
@@ -43,5 +44,6 @@ class Internet(db.Model):
             'latitude': self.latitude,
             'ODPId': self.ODPId,
             'firstONT': self.firstONT,
-            'lastONT': self.lastONT
+            'lastONT': self.lastONT,
+            "statusONT": self.statusONT
         }

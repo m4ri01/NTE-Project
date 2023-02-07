@@ -73,6 +73,14 @@ export default {
           <div class="col-1">:</div>
           <div class="col-6">{{ item.ODP }}</div>
         </div>
+        <div class="row result">
+          <div class="col-5">Status ONT</div>
+          <div class="col-1">:</div>
+          <div class="col-6">
+            <span v-if="item.statusONT === 0" class="border border-2 rounded-pill px-3 bg-danger">offline</span>
+            <span v-else class="border border-2 rounded-pill px-3 bg-success">online</span>
+          </div>
+        </div>
       </div>
       <div class="col-3 text-center my-5 result">
         <h5>History ONT</h5>

@@ -24,6 +24,7 @@ export default {
         status: "",
         firstONT:"",
         lastONT:"",
+        statusONT:"",
       },
     };
   },
@@ -65,7 +66,7 @@ export default {
       <img
         class="header-img"
         style="object-fit: cover; overflow: hidden"
-        src="../assets/header.jpeg"
+        src="../assets/header.png"
         alt="Header"
       />
     </div>

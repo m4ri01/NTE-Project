@@ -9,5 +9,6 @@ def Obj2Json(obj):
         'latitude': obj.Internet.latitude,
         'ODP': obj.ODP.ODPName,
         'firstONT': obj.Internet.firstONT,
-        'lastONT': obj.Internet.lastONT
+        'lastONT': obj.Internet.lastONT,
+        'statusONT': obj.Internet.statusONT,
     }

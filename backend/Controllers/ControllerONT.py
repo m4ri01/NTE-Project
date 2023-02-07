@@ -11,15 +11,16 @@ def store():
     longitude = data["longitude"]
     latitude = data["latitude"]
     ODPData = data["ODP"]
+    statusONT = data["statusONT"]
 
     ODPCheck = db.session.query(ODP).filter_by(ODPName=ODPData).first() 
     if ODPCheck is None:
          return jsonify({'error': 'ODP not found'}), 404
     distance = Distance.haversine(ODPCheck.latitude, ODPCheck.longitude, latitude, longitude)
     if distance >= 250:
-        return jsonify({'error': 'ONT is not in range'}), 400
+        return jsonify({'error': f'ONT is not in range {round(distance,2)}m'}), 400
     if db.session.query(Internet).filter_by(NDInternet=NDInternet).first() is None:
-        db.session.add(Internet(Name=Name, NDInternet=NDInternet, SNONT=SNONT, alamat=alamat, longitude=longitude, latitude=latitude, ODPId=ODPCheck.id, firstONT=SNONT))
+        db.session.add(Internet(Name=Name, NDInternet=NDInternet, SNONT=SNONT, alamat=alamat, longitude=longitude, latitude=latitude, ODPId=ODPCheck.id, firstONT=SNONT, statusONT=statusONT))
     else:
         data = db.session.query(Internet).filter_by(NDInternet=NDInternet).first()
         data.Name = Name
@@ -30,6 +31,7 @@ def store():
         data.latitude = latitude
         data.ODPId = ODPCheck.id
         data.lastONT = SNONT
+        data.statusONT = statusONT
     db.session.commit()
     return jsonify({'success': 'ONT stored'}), 200
 

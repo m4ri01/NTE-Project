@@ -1,0 +1,23 @@
+Rev:
+- menambahkan status online/offline
+- menambahkan notif untuk pengisian angka di longitude,latitude
+- tambahkan contoh untuk tikor
+- tambahkan contoh untuk format ODP 
+
+
+Rumah 1
+ND Internet
+:
+9999
+SN ONT
+:
+1111
+Alamat
+:
+Jalan A
+Tikor
+:
+128.1854444, -3.6547470
+ODP
+:
+ODP-PAO-FAR/037

@@ -12,6 +12,7 @@ export default {
         longitude: "",
         latitude: "",
         odp: "",
+        statusONT: ""
       },
     };
   },
@@ -30,6 +31,7 @@ export default {
           longitude: this.form.longitude,
           latitude: this.form.latitude,
           ODP: this.form.odp,
+          statusONT:this.form.statusONT,
         },
       })
         .then((response) => {
@@ -40,7 +42,7 @@ export default {
           Swal.fire(
             "Failed!",
             error.response.data.error
-              ? `${error.response.data.error} (${error.response.status})`
+              ? `${error.response.data.error}`
               : `Request gagal tanpa error message (${error.response.status})`,
             "error"
           );
@@ -126,6 +128,7 @@ export default {
             type="number"
             id="longitude"
             class="form-control"
+            placeholder="Contoh: 113.xxxx"
           />
         </div>
       </div>
@@ -140,6 +143,7 @@ export default {
             type="number"
             id="latitude"
             class="form-control"
+            placeholder="Contoh: -3.xxx"
           />
         </div>
       </div>
@@ -150,6 +154,19 @@ export default {
         </div>
         <div class="col-6">
           <input v-model="form.odp" type="text" id="odp" class="form-control" />
+        </div>
+      </div>
+      <div class="row g-3 align-items-center mt-2">
+        <div class="col-2"></div>
+        <div class="col-1">
+          <label for="odp" class="col-form-label">Status</label>
+        </div>
+        <div class="col-6">
+          <select v-model="form.statusONT">
+            <option disabled value="">Please select one</option>
+            <option value=1>Online</option>
+            <option value=0>Offline</option>
+          </select>
         </div>
       </div>
       <div class="row g-3 align-items-center mt-2">
