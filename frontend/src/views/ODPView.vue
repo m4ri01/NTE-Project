@@ -1,6 +1,7 @@
 <script lang="ts">
 import axios from "axios";
 import Swal from "sweetalert2";
+
 export default {
     data(){
         return {
@@ -76,6 +77,11 @@ export default {
                 <div class="col-6 text-center">
                     <button @click="submitFile()" class="btn btn-primary">Submit</button>
                 </div>
+            </div>
+            <div class="row align-items-center mt-3 mx-5">
+              <div class="col">
+                <embed src="public/panduan.pdf" width="100%" height="400px" />
+              </div>
             </div>
         </div>
     </div>

@@ -31,5 +31,16 @@ services:
       - '80:80'
     depends_on:
       - be
+    restart: always
+  phpmyadmin:
+    container_name: phpMyAdminService
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
 volumes:
   db_data:
